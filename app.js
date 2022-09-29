@@ -13,6 +13,7 @@ app.use((req, res, next) => {
     if (req.method === 'OPTIONS') return res.status(200).json({ message: "OK" })
     next()
 })
+//using graphql
 app.use('/graphql', graphqlHTTP({
     schema: graphqlSchema,
     rootValue: graphqlResolver,
